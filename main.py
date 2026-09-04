@@ -15,12 +15,11 @@ while number_is_correct:
         print("Please enter a number.")
         continue
 
-    attempts += 1
-
     if user_guess > 100 or user_guess <= 0:
         print("Please enter a number between 1 and 100.")
         continue
-        
+
+    attempts += 1   
 
     if user_guess < correct_number:
         print("Too low! ⬇️")
@@ -29,3 +28,9 @@ while number_is_correct:
     else:
         print(f"🎉 Correct! You got it in {attempts} attempts.")
         number_is_correct = False
+        
+
+    if attempts == 7:
+        print("😢 Game over!")
+        print(f"The correct number was {correct_number}.")
+        break
