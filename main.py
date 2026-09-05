@@ -21,16 +21,19 @@ while number_is_correct:
 
     attempts += 1   
 
-    if user_guess < correct_number:
-        print("Too low! ⬇️")
-    elif user_guess > correct_number:
-        print("Too high! ⬆️")
-    else:
+    if user_guess == correct_number:
         print(f"🎉 Correct! You got it in {attempts} attempts.")
         number_is_correct = False
-        
+    else:
 
-    if attempts == 7:
-        print("😢 Game over!")
-        print(f"The correct number was {correct_number}.")
-        break
+        if attempts == 7:
+            print("😢 Game over!")
+            print(f"The correct number was {correct_number}.")
+            break
+
+
+        if user_guess < correct_number:
+            print("Too low! ⬇️")
+        elif user_guess > correct_number:
+            print("Too high! ⬆️")
+
